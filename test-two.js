@@ -46,7 +46,7 @@ const mappingData = (data) => {
   return getUniqueDataPerDay(result);
 };
 
-function getUniqueDataPerDay(data) {
+const getUniqueDataPerDay = (data) => {
   const uniqueDates = new Set();
 
   // I use filter to remove date that are added to uniqueDates
@@ -63,10 +63,10 @@ function getUniqueDataPerDay(data) {
     // If date is in uniqueDates then dont put it in result
     return false;
   });
-}
+};
 
 // This one quite confusing, if it from php it should have been more easy but i don't know how to do it in pure js, although there is library for that but i will avoid it for now
-function getDateString(date) {
+const getDateString = (date) => {
   // I'll be using Intl for this one this is the docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
 
   // Create date formatter
@@ -86,7 +86,7 @@ function getDateString(date) {
 
   // Return the result with the format we want
   return `${partsMap.weekday}, ${partsMap.day} ${partsMap.month} ${partsMap.year}`;
-}
+};
 
 const run = async () => {
   // Fetch data first from API
